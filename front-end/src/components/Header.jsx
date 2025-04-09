@@ -64,7 +64,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li><Link to="/home/settings">Settings</Link></li>
-                <li><a>Logout</a></li>
+                <li><Link to={"/"}>Logout</Link></li>
               </ul>
             </div>
           </div>

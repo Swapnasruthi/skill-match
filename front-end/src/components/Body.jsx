@@ -6,7 +6,7 @@ const Body = () => {
     <div>
        <Header/>
        <Outlet/>
-       <Footer/> 
+       {/* <Footer/>  */}
     </div>
   )
 }

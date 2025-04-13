@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Body from "./components/Body";
 import Network from "./components/Network";
 import Messages from "./components/Messages";
@@ -12,27 +13,24 @@ import About from "./components/About";
 const App = () => {
   return (
     <div>
-        <BrowserRouter basename="/">
-            <Routes>
-                <Route path="/" element={<About/>}/>
-                <Route path="/login" element={<Login/>}/>
-                {/* <Route path="/signup" element={<Signup/>}/> */}
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-                <Route path="/home" element={<Body/>}>
-                    <Route path="/home" element={<Feed/>}/>
-                    <Route path="network" element={<Network/>}/>
-                    <Route path="messages" element={<Messages/>}/>
-                    <Route path="notifications" element={<Notifications/>}/>
-                    <Route path="profile" element={<Profile/>}/>
-                    <Route path="settings" element={<Settings/>}/>
-                    </Route>
-              </Routes>
-           
-        
-        
-        </BrowserRouter>
+          <Route path="/home" element={<Body />}>
+            <Route path="/home" element={<Feed />} />
+            <Route path="network" element={<Network />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

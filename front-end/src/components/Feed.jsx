@@ -28,16 +28,16 @@ const Feed = () => {
   return (
     <div>
         <div>
-          <p className="mx-5 mt-10 mb-5 font-bold text-xl">Project Categories</p>
+          <p className="mx-16 my-8 font-bold text-xl">Project Categories</p>
 
-          <div className="w-6/12 mx-10">
+          <div className="w-6/12 mx-54 my-5 flex flex-wrap justify-start">
               {projectCategories.map((category, index) => (
-                <button key={index} className="btn btn-outline btn-secondary mx-2 mb-2 ">{category}</button>
+                <button key={index} className="btn btn-outline btn-secondary mx-2 mb-2 text-[10px]">{category}</button>
               ))}
           </div>
           
           <div>
-              <p className="font-bold text-xl mx-5 my-10">Featured Projects</p>
+              <p className="font-bold text-xl mx-15 my-5">Featured Projects</p>
               <div>
                   <ProjectCard />
               </div>

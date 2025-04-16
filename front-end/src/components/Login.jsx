@@ -4,9 +4,10 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../constants/constant";
 const Login = () => {
+  
   const navigate = useNavigate();
-  const [email, setEmail] = useState("swapna@gmail.com"); 
-  const [password, setPasssword]  = useState("Swapna@369");
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword]  = useState("");
 
   const handleLogin = async () => {
     // add valid auth swapna -- done
@@ -81,7 +82,7 @@ const Login = () => {
                 required 
                 placeholder="Password" 
                 value={password}
-                onChange={(e) => setPasssword(e.target.password)}
+                onChange={(e) => setPassword(e.target.value)}
                 
                 />
               </label>

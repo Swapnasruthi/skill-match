@@ -1,16 +1,19 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { BACKEND_URL } from "../constants/constant";
 
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    fullName: "",
-    location: "",
-    bio: "",
+    username: '',
+    fullname: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    location: '',
+    bio: '',
+    skill: '',
     skills: [],
   });
 
@@ -90,12 +93,30 @@ const Signup = () => {
     setStep(2);
   };
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
+    try{
+     
+      const res = await axios.post(BACKEND_URL+"/auth/register", {
+        username: formData.username,
+        fullname: formData.fullname,
+        email: formData.email,
+        password: formData.password,
+        location: formData.location,
+        bio: formData.bio,
+        skills: formData.skills,
+      }, {
+        withCredentials: true,});
+        
     // Here you would typically make an API call to register the user
     // For now, we'll just navigate to the login page
-    console.log("Form data submitted:", formData);
-    navigate("/login");
+      alert("Account created!");
+      //console.log("Form data submitted:", formData);
+      navigate("/login");
+  }
+    catch(err){
+      console.log(err || "something wrong at signup api in frontend!" );
+    }
   };
 
   return (
@@ -197,11 +218,11 @@ const Signup = () => {
                     </svg>
                     <input
                       type="text"
-                      name="fullName"
+                      name="fullname"
                       required
                       placeholder="Enter your full name"
                       className="flex-1"
-                      value={formData.fullName}
+                      value={formData.fullname}
                       onChange={handleChange}
                     />
                   </label>

@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 // @access  Public
 router.post("/register", async (req, res) => {
   try {
-    const { username, fullName, email, password, location, bio, skills } = req.body;
+    const { username, fullname, email, password, location, bio, skills } = req.body;
 
     // Check if user already exists
     let user = await User.findOne({ $or: [{ email }, { username }] });
@@ -22,12 +22,12 @@ router.post("/register", async (req, res) => {
     }
 
     //hashing the password
-    const hashedPassword = await bcrypt(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create user
     const newUser = new User({
       username,
-      fullName,
+      fullname,
       email,
       password: hashedPassword,
       location,
@@ -35,8 +35,10 @@ router.post("/register", async (req, res) => {
       skills
     });
     await newUser.save();
-  
-    sendTokenResponse(user, 201, res);   // res.status(201).json({message:"user created successfully"});
+    res.status(201).json({
+      data: newUser,  
+      message:"user created successfully"});
+    // sendTokenResponse(user, 201, res);  
   } catch (err) {
     res.status(500).json({
       success: false,

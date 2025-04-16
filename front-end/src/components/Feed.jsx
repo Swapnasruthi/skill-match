@@ -1,8 +1,12 @@
-
+import Card from "./Card";
 const Feed = () => {
   return (
-    <div>Feed</div>
+    <div>
+      <Card/>
+      <Card/>
+    </div>
+
   )
 }
 
-export default Feed
+export default Feed;

@@ -8,6 +8,7 @@ import Notifications from "./components/Notifications";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="notifications" element={<Notifications/>}/>
                     <Route path="profile" element={<Profile/>}/>
                     <Route path="settings" element={<Settings/>}/>
+                    <Route path="projects" element={<Projects/>}/>
                     </Route>
               </Routes>
            

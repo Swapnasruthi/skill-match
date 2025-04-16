@@ -14,35 +14,11 @@ import Projects from "./components/Projects";
 const App = () => {
   return (
     <div>
-<<<<<<< HEAD
-        <BrowserRouter basename="/">
-            <Routes>
-                <Route path="/" element={<About/>}/>
-                   
-                <Route path="/home" element={<Body/>}>
-                    <Route path="/home" element={<Feed/>}/>
-                    <Route path="network" element={<Network/>}/>
-                    <Route path="messages" element={<Messages/>}/>
-                    <Route path="notifications" element={<Notifications/>}/>
-                    <Route path="profile" element={<Profile/>}/>
-                    <Route path="settings" element={<Settings/>}/>
-                    <Route path="projects" element={<Projects/>}/>
-                    </Route>
-              </Routes>
-           
-        
-        
-        </BrowserRouter>
-    </div>
-  )
-}
-=======
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
->>>>>>> main
 
           <Route path="/home" element={<Body />}>
             <Route path="/home" element={<Feed />} />

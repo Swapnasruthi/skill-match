@@ -2,13 +2,14 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const { protect } = require("../middleware/auth");
+const bcrypt = require("bcrypt");
 
 // @desc    Register user
 // @route   POST /api/auth/register
 // @access  Public
 router.post("/register", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, fullName, email, password, location, bio, skills } = req.body;
 
     // Check if user already exists
     let user = await User.findOne({ $or: [{ email }, { username }] });
@@ -20,14 +21,22 @@ router.post("/register", async (req, res) => {
       });
     }
 
-    // Create user
-    user = await User.create({
-      username,
-      email,
-      password,
-    });
+    //hashing the password
+    const hashedPassword = await bcrypt(password, 10);
 
-    sendTokenResponse(user, 201, res);
+    // Create user
+    const newUser = new User({
+      username,
+      fullName,
+      email,
+      password: hashedPassword,
+      location,
+      bio,
+      skills
+    });
+    await newUser.save();
+  
+    sendTokenResponse(user, 201, res);   // res.status(201).json({message:"user created successfully"});
   } catch (err) {
     res.status(500).json({
       success: false,

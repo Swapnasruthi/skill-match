@@ -14,6 +14,11 @@ const UserSchema = new mongoose.Schema({
       "Username can only contain letters, numbers, and dashes",
     ],
   },
+  fullname: {
+    type: String,
+    required: [true, "Please provide your name"],
+
+  },
   email: {
     type: String,
     required: [true, "Please provide an email"],

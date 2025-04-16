@@ -1,4 +1,6 @@
 import ProjectCard from "../inner-components/ProjectCard";
+import {Link} from "react-router-dom";
+import FormData from "../utils/MockData";
 
 const Feed = () => {
 
@@ -37,9 +39,11 @@ const Feed = () => {
           </div>
           
           <div>
-              <p className="font-bold text-xl mx-15 my-5">Featured Projects</p>
+              <p className="font-bold text-xl mx-15 my-5">Featured Projects<Link to="/home/addProject"> <span><button className="cursor-pointer" >+</button></span></Link></p>
+              
               <div>
-                  <ProjectCard />
+                  <ProjectCard data={FormData}/>
+                  
               </div>
           </div>
       

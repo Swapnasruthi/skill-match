@@ -1,34 +1,33 @@
 import React from 'react'
 
-const ProjectCard = () => {
+const ProjectCard = ({data}) => {
   return (
     <div className='flex flex-col justify-center items-center'>
             
         <div className="border rounded-xl p-4 flex justify-between items-center shadow-lg w-8/12 my-10 bg-gray-800 text-white hover:shadow-2xl transition duration-300 relative">
             <div>
                 <h2 className="my-3">
-                <span className="text-xl font-bold mb-2">E-commerce App </span>
+                <span className="text-xl font-bold mb-2">{data.Title} </span>
                 <span className="text-sm text-gray-500 mb-1">2h.</span>
                 </h2>
               
 
                 <p className="text-gray-300 mb-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.
+                {data.Description}
                 </p>
 
                 {/* Project Info */}
-                <p className="text-sm mb-1">Web App/App</p>
-                <p className="text-sm text-gray-500 mb-1">Created by: John Doe</p>
+                <p className="text-sm mb-1">{data.Domain}</p>
+                <p className="text-sm text-gray-500 mb-1">Created by: {data.Creator}</p>
 
                 {/* Difficulty Level */}
                 {/* <span className="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-1 rounded-full mb-2">
                 Intermediate Level
                 </span> */}
 
-                <p className="text-sm text-gray-400 mb-1">Tech Stack: React, Node.js, MongoDB</p>
-                <p className="text-sm text-gray-400 mb-1">3/5 Members | Need: Backend Dev, UI Designer</p>
-                <p className="text-sm text-red-400 mb-1">Deadline: 30 Apr 2025</p>
+                <p className="text-sm text-gray-400 mb-1">Tech Stack: {data.Tech}</p>
+                <p className="text-sm text-gray-400 mb-1">{data.Count} | Need: {data.Skills}</p>
+                <p className="text-sm text-red-400 mb-1">Deadline: {data.Deadline}</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 my-4">

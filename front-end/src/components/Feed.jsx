@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import Card from "./Card";
-=======
 import ProjectCard from "../inner-components/ProjectCard";
 
->>>>>>> main
 const Feed = () => {
 
   const projectCategories = [
@@ -31,12 +27,6 @@ const Feed = () => {
   
   return (
     <div>
-<<<<<<< HEAD
-      <Card/>
-      <Card/>
-    </div>
-
-=======
         <div>
           <p className="mx-16 my-8 font-bold text-xl">Project Categories</p>
 
@@ -59,7 +49,6 @@ const Feed = () => {
 
         </div>
     </div>
->>>>>>> main
   )
 }
 

@@ -1,14 +1,8 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem, removeItem, clearCart } from '../utils/AppSlice';
+
 const Login = () => {
-  
   return (
-    <div>
-    <button >Login</button>
-    
-    </div>
+    <div>Login</div>
   )
 }
 
-export default Login;
+export default Login

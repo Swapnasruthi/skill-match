@@ -71,7 +71,11 @@ const Header = () => {
                   </Link>
                 </li>
                 <li><Link to="/home/settings">Settings</Link></li>
+<<<<<<< HEAD
                 <li><Link to="/">Logout</Link></li>
+=======
+                <li><Link to={"/"}>Logout</Link></li>
+>>>>>>> main
               </ul>
             </div>
           </div>
@@ -79,5 +83,7 @@ const Header = () => {
     </div>
   )
 }
+
+
 
 export default Header;

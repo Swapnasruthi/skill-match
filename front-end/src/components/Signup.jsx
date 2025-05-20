@@ -17,6 +17,7 @@ const Signup = () => {
     skills: [],
   });
 
+  const [toast, setToast] = useState(false);
   const [currentSkill, setCurrentSkill] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [step, setStep] = useState(1); // 1: Basic Info, 2: Profile Info
@@ -110,9 +111,14 @@ const Signup = () => {
         
     // Here you would typically make an API call to register the user
     // For now, we'll just navigate to the login page
-      alert("Account created!");
-      //console.log("Form data submitted:", formData);
+      setToast(true);
+      setTimeout(()=>{
+        setToast(false);
       navigate("/login");
+
+      },1000);
+      // alert("Account created!");
+      //console.log("Form data submitted:", formData);
   }
     catch(err){
       console.log(err || "something wrong at signup api in frontend!" );
@@ -121,6 +127,13 @@ const Signup = () => {
 
   return (
     <div className="flex flex-row justify-center items-center min-h-screen bg-base-100 p-4">
+      {/* //added a toast */}
+      {toast && <div className="toast toast-top toast-center">
+          <div className="alert alert-info">
+            <span>User Created Sucessfully</span>
+          </div>
+        </div>}
+
       {/* Left side image */}
       <div className="hidden lg:block lg:w-1/2">
         <img

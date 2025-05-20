@@ -6,9 +6,9 @@ import { BACKEND_URL } from "../constants/constant";
 const Login = () => {
   
   const navigate = useNavigate();
-  const [email, setEmail] = useState(""); 
-  const [password, setPassword]  = useState("");
-
+  const [email, setEmail] = useState("swapnamajji2005@gmail.com"); 
+  const [password, setPassword]  = useState("Swapna@123");
+  const [toast, setToast] = useState(false);
   const handleLogin = async () => {
     // add valid auth swapna -- done
     try{
@@ -16,7 +16,15 @@ const Login = () => {
                   {email, password},
                   {withCredentials: true}
         );
-        return navigate("/home");
+
+        //adding a toast.
+        setToast(true);
+        setTimeout(() => {
+          setToast(false);
+           navigate("/home");
+
+        }, 1000);
+
     }
     catch(err){
         console.log(err || "something wrong at login api in frontend!" );
@@ -24,7 +32,21 @@ const Login = () => {
 
   };
   return (
+
+    <>
+  
+    
+
     <div className="flex flex-row justify-center gap-52 items-center px-10">
+
+         {toast && <div className="toast toast-top toast-center">
+          <div className="alert alert-info">
+            <span>Successfuly, Logged In</span>
+          </div>
+        </div>}
+      
+      
+
       <div>
         <img
           src="../images/login_motion.gif"
@@ -117,6 +139,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

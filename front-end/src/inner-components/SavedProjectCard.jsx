@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom';
 
-const ProjectCard = ({data}) => {
+const SavedProjectCard = ({data}) => {
   return (
     <div className='flex flex-col justify-center items-center'>
             
@@ -75,7 +75,7 @@ const ProjectCard = ({data}) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                                 </svg>
 
-                                <span className='font-semibold text-lg'>Save</span>
+                                <span className='font-semibold text-lg'>UnSave</span>
                             </button>
                         </div>
                     </div>
@@ -121,4 +121,4 @@ const ProjectCard = ({data}) => {
   )
 }
 
-export default ProjectCard
+export default SavedProjectCard

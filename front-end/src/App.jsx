@@ -11,6 +11,8 @@ import Settings from "./components/Settings";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import ProjectForm from "./inner-components/ProjectForm";
+import SavedPage from "./components/SavedPage";
+import ApplyForm from "./components/ApplyForm";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
                     <Route path="settings" element={<Settings/>}/>
                     <Route path="projects" element={<Projects/>}/>
                     <Route path="addProject" element={<ProjectForm/>}/>
+                    <Route path="savedProject" element={<SavedPage/>}/>
+                    <Route path="apply" element={<ApplyForm/>}/>
 
                     </Route>
               </Routes>
